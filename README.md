@@ -1,6 +1,3 @@
-This is an exercise used to filter interview candidates by assessing your approach to development and use of
-infrastructure as code tooling. This has been tested using terraform v0.14.5 we advise you use 
-this version.
 
 Here we have some terraform to build a simple VPC network, for now we have just one instance running the web server 
 Nginx in its default configuration, serving up the default welcome page. To run this use the following command...
