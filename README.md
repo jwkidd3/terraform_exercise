@@ -12,13 +12,13 @@ page HTML.
 
 
 1. We want to be able to run the same stack closer to our customers in the US. Please build the same stack in 
-the us-east-1 (Virginia) region, leaving the existing one in place too.  Feel free to modify the code and or structure 
+the your assigned region, leaving the existing one in place too.  Feel free to modify the code and or structure 
 as much as needed in order to do this, you'll need to consider terraform state each stack should have its own state but 
 don't feel you need to go as far as setting up remote state. As for a CIDR the new VPC use whatever you feel like, 
 providing it is compliant with RFC-1918 and does not overlap with the dublin network.
 
-2. Virginia has several availability zones, we want to use 4. Yet we still want to run the stack in Ireland using the 3 
-AZs there. Modify the Virgina stack to span 4 AZs do this however you like, but consider that we would like to 
+2. There are several availability zones, we want to use at least 3 (unless your region has fewer). Yet we still want to run the stack in Ireland using the 3 
+AZs there. Modify the stack in your region to span at least 3 (unless your region has fewer) do this however you like, but consider that we would like to 
 see reuse of code.
 
 3. The EC2 instance running Nginx went down over the weekend, we had an outage, it's been decided that we need a solution 
@@ -29,7 +29,7 @@ to run in the event one instance goes down.
 are not addressable on the internet. Modify the VPC to meet this requirement, the private subnets should still have egress
 internet connectivity.
 
-5. In order to provide a consistent environment on the teams CI server and each engineer's workstation we've decided it 
+BONUS: In order to provide a consistent environment on the teams CI server and each engineer's workstation we've decided it 
 would make sense to run terraform in Docker. Create a Dockerfile and a wrapper script that will enable this. THe script
 should be callable with the same arguments as the terraform cli tool, i.e. init/plan/apply etc
  
