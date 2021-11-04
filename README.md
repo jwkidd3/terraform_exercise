@@ -1,6 +1,7 @@
 
 Here we have some terraform to build a simple VPC network, for now we have just one instance running the web server 
 Nginx in its default configuration, serving up the default welcome page. To run this use the following command...
+***NOTE: YOU WILL NEED TO MODIFY THE AWS RESOURCE NAMES TO MAKE THEM UNIQUE. USE YOUR USER ID AS A PREXIF.
 
     terraform init && terraform apply -var-file=dublin.tfvars
 
